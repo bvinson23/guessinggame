@@ -8,6 +8,9 @@ void Play()
     int secretNumber = i.Next(1, 100);
     while (numberOfGuesses < 4)
     {
+        Console.WriteLine("-----------------");
+        Console.WriteLine("| Guessing Game |");
+        Console.WriteLine("-----------------");
         Console.WriteLine("Guess the secret number");
         Console.WriteLine("-----------------------");
         Console.Write($"Your guess({numberOfGuesses + 1})");
@@ -27,12 +30,14 @@ void Play()
                     Console.WriteLine("Too high. Try again.");
                     numberOfGuesses++;
                     Console.WriteLine($"You have {4 - numberOfGuesses} left.");
+                    Console.WriteLine();
                 }
                 else if (int.Parse(userGuess) < secretNumber)
                 {
                     Console.WriteLine("Too low. Try again.");
                     numberOfGuesses++;
                     Console.WriteLine($"You have {4 - numberOfGuesses} left.");
+                    Console.WriteLine();
                 }
             }
             if (numberOfGuesses == 4)
