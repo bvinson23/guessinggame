@@ -4,6 +4,7 @@ Play();
 void Play()
 {
     int numberOfGuesses = 0;
+    string a ="\u221e";
     Random i = new Random();
     int secretNumber = i.Next(1, 100);
     Console.WriteLine("-----------------");
@@ -135,6 +136,43 @@ void Play()
                 if (numberOfGuesses == 4)
                 {
                     Console.WriteLine("No more guesses, you lose!");
+                }
+            }
+            Game();
+        }
+    }
+    else if (playDifficulty == 69)
+    {
+        while (true)
+        {
+            Console.WriteLine("Guess the secret number");
+            Console.WriteLine("-----------------------");
+            Console.Write($"Your guess({numberOfGuesses + 1})");
+            string userGuess = Console.ReadLine();
+
+            void Game()
+            {
+                if (secretNumber == int.Parse(userGuess))
+                {
+                    Console.WriteLine("You won! But you must have been cheating");
+                    Play();
+                }
+                else
+                {
+                    if (int.Parse(userGuess) > secretNumber)
+                    {
+                        Console.WriteLine("Too high. Try again.");
+                        numberOfGuesses++;
+                        Console.WriteLine($"You have {a} left.");
+                        Console.WriteLine();
+                    }
+                    else if (int.Parse(userGuess) < secretNumber)
+                    {
+                        Console.WriteLine("Too low. Try again.");
+                        numberOfGuesses++;
+                        Console.WriteLine($"You have {a} left.");
+                        Console.WriteLine();
+                    }
                 }
             }
             Game();
