@@ -24,6 +24,7 @@ void Play()
             {
                 Console.WriteLine("Seriously, that's your guess? Try again.");
                 numberOfGuesses++;
+                Console.WriteLine($"You have {4 - numberOfGuesses} left.");
             }
             if (numberOfGuesses == 4)
             {
