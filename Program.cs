@@ -22,9 +22,18 @@ void Play()
             }
             else
             {
-                Console.WriteLine("Seriously, that's your guess? Try again.");
-                numberOfGuesses++;
-                Console.WriteLine($"You have {4 - numberOfGuesses} left.");
+                if (int.Parse(userGuess) > secretNumber)
+                {
+                    Console.WriteLine("Too high. Try again.");
+                    numberOfGuesses++;
+                    Console.WriteLine($"You have {4 - numberOfGuesses} left.");
+                }
+                else if (int.Parse(userGuess) < secretNumber)
+                {
+                    Console.WriteLine("Too low. Try again.");
+                    numberOfGuesses++;
+                    Console.WriteLine($"You have {4 - numberOfGuesses} left.");
+                }
             }
             if (numberOfGuesses == 4)
             {
