@@ -9,6 +9,7 @@ void Play()
     {
         Console.WriteLine("Guess the secret number");
         Console.WriteLine("-----------------------");
+        Console.Write($"Your guess({numberOfGuesses + 1})");
         string userGuess = Console.ReadLine();
 
         void Game()
