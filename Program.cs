@@ -4,7 +4,8 @@ Play();
 void Play()
 {
     int numberOfGuesses = 0;
-    int secretNumber = 42;
+    Random i = new Random();
+    int secretNumber = i.Next(1, 100);
     while (numberOfGuesses < 4)
     {
         Console.WriteLine("Guess the secret number");
